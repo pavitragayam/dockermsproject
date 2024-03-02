@@ -1,20 +1,25 @@
----
 version: "3.8"
 services:
   movies:
-    image: pavitragayam/paytmmovies:latest
+    image: pavitragayam/movies:latest
     ports:
       - 91:80
     deploy:
       replicas: 3
+  train:
+    image: pavitragayam/train:latest
+    ports:
+      - 92:80
+    deploy:
+      replicas: 3
   recharge:
-    image: pavitragayam/paytmrecharge:latest
+    image: pavitragayam/recharge:latest
     ports:
       - 93:80
     deploy:
       replicas: 3
   dth:
-    image: pavitragayam/paytmdth:latest
+    image: pavitragayam/dth:latest
     ports:
       - 94:80
     deploy:
